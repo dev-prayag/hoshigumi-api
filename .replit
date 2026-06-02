@@ -30,9 +30,3 @@ externalPort = 80
 [[ports]]
 localPort = 21121
 externalPort = 3000
-
-[userenv]
-
-[userenv.shared]
-UPSTASH_REDIS_REST_URL = "https://cute-oyster-110994.upstash.io"
-UPSTASH_REDIS_REST_TOKEN = "gQAAAAAAAbGSAAIgcDFiN2NiNTcyYjQwMTg0YWMwYTA3M2E3MzlhODFiZTA4ZA"
