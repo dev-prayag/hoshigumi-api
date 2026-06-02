@@ -1,5 +1,6 @@
 import app from "./app";
 import { logger } from "./lib/logger";
+import { startCacheWarmer } from "./lib/cache";
 
 export default app;
 
@@ -19,6 +20,7 @@ if (rawPort) {
       process.exit(1);
     }
     logger.info({ port }, "Server listening");
+    startCacheWarmer();
   });
 } else if (process.env["VERCEL"] !== "1") {
   logger.warn("PORT not set — server will not listen. Set PORT to start.");
