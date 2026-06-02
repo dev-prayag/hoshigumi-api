@@ -431,16 +431,22 @@ function Home() {
           <div id="deployment" className="scroll-mt-24 mb-24 bg-[#090b0f] border border-border p-8 rounded-xl shadow-xl">
             <div className="flex items-center gap-3 mb-4">
               <Server className="h-6 w-6 text-cyan-400" />
-              <h2 className="text-2xl font-bold tracking-tight text-white">Vercel Deployment Guide</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-white">Render Deployment Guide</h2>
             </div>
             <p className="text-muted-foreground mb-6">
-              You can easily host this API yourself using Vercel.
+              Hoshigumi is designed to run on <a href="https://render.com" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">Render</a> as a persistent Node.js service — background cache warming, no execution timeouts, no cold starts on paid plans.
             </p>
             <ol className="space-y-4 list-decimal list-inside text-muted-foreground ml-4">
-              <li>Import the repository into Vercel.</li>
-              <li>Set the <strong>Root Directory</strong> to <code className="text-cyan-400 bg-cyan-400/10 px-1.5 py-0.5 rounded">artifacts/api-server</code>.</li>
-              <li>Set the <strong>Build Command</strong> to <code className="text-cyan-400 bg-cyan-400/10 px-1.5 py-0.5 rounded">node ./build.mjs</code>.</li>
-              <li>Deploy. The serverless functions will be mapped automatically based on <code className="text-cyan-400 bg-cyan-400/10 px-1.5 py-0.5 rounded">vercel.json</code>.</li>
+              <li>Fork or clone the repo at <a href="https://github.com/dev-prayag/hoshigumi-api" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">github.com/dev-prayag/hoshigumi-api</a> and push it to your GitHub account.</li>
+              <li>Go to <a href="https://render.com" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">render.com</a> → <strong className="text-white">New</strong> → <strong className="text-white">Blueprint</strong> and connect your repository.</li>
+              <li>Render auto-detects <code className="text-cyan-400 bg-cyan-400/10 px-1.5 py-0.5 rounded">render.yaml</code> and creates both the API service and the docs static site.</li>
+              <li>Set the two required environment variables on the <strong className="text-white">hoshigumi-api</strong> service:
+                <div className="mt-3 space-y-2 ml-4">
+                  <div><code className="text-cyan-400 bg-cyan-400/10 px-1.5 py-0.5 rounded">UPSTASH_REDIS_REST_URL</code> — your Upstash Redis REST URL</div>
+                  <div><code className="text-cyan-400 bg-cyan-400/10 px-1.5 py-0.5 rounded">UPSTASH_REDIS_REST_TOKEN</code> — your Upstash Redis REST token</div>
+                </div>
+              </li>
+              <li>Click <strong className="text-white">Deploy</strong>. The API will be live at <code className="text-cyan-400 bg-cyan-400/10 px-1.5 py-0.5 rounded">https://hoshigumi-api.onrender.com/api</code>.</li>
             </ol>
           </div>
 
