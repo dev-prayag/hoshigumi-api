@@ -97,7 +97,7 @@ function Home() {
         <div className="p-6">
           <div className="flex items-center gap-2.5 mb-10 text-cyan-400">
             <Database className="h-7 w-7" />
-            <span className="text-xl font-bold tracking-tight text-white">AniKoto API</span>
+            <span className="text-xl font-bold tracking-tight text-white">Hoshigumi</span>
           </div>
 
           <nav className="space-y-8">
@@ -134,7 +134,7 @@ function Home() {
             <div className="flex items-center justify-between mb-10">
               <div className="flex items-center gap-2 text-cyan-400">
                 <Database className="h-6 w-6" />
-                <span className="text-lg font-bold text-white">AniKoto API</span>
+                <span className="text-lg font-bold text-white">Hoshigumi</span>
               </div>
               <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)}>
                 <X className="h-5 w-5" />
@@ -171,7 +171,7 @@ function Home() {
         <header className="lg:hidden sticky top-0 z-40 bg-background/80 backdrop-blur border-b border-border p-4 flex items-center justify-between">
           <div className="flex items-center gap-2 text-cyan-400">
             <Database className="h-6 w-6" />
-            <span className="font-bold text-white tracking-tight">AniKoto API</span>
+            <span className="font-bold text-white tracking-tight">Hoshigumi</span>
           </div>
           <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(true)}>
             <Menu className="h-6 w-6" />
@@ -187,11 +187,11 @@ function Home() {
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold tracking-tighter text-white mb-6 leading-tight">
-              A high-performance <br/>anime data API.
+              Hoshigumi — <br/>anime data API.
             </h1>
             
             <p className="text-lg lg:text-xl text-muted-foreground mb-10 max-w-3xl leading-relaxed">
-              Unofficial REST API powered by scraping anikoto.cz. Provides extremely fast access to recent anime, detailed series information, advanced search, and more. No authentication required.
+              Unofficial REST API by <span className="text-cyan-400 font-semibold">prayag</span>, powered by scraping anikoto.cz. Provides fast access to recent anime, detailed series information, advanced search, and more. No authentication required.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -446,8 +446,16 @@ function Home() {
 
         </div>
         
-        <footer className="border-t border-border bg-[#050608] py-8 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} AniKoto API Docs. An unofficial project.</p>
+        <footer className="border-t border-border bg-[#050608] py-10 text-center text-sm text-muted-foreground space-y-2">
+          <p className="text-white font-semibold tracking-tight">Hoshigumi API</p>
+          <p>Built by <span className="text-cyan-400">prayag</span> · An unofficial project, not affiliated with AniKoto.</p>
+          <p>
+            Data sourced from{" "}
+            <a href="https://anikoto.cz" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
+              anikoto.cz
+            </a>
+            {" "}— all rights belong to their respective owners.
+          </p>
         </footer>
       </main>
     </div>
